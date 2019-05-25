@@ -5,4 +5,6 @@ RUN git clone https://github.com/idris-lang/Idris-dev.git idris && cd idris \
   && make \
   && cabal install idris
 
+WORKDIR /data
+
 CMD ["idris"]
