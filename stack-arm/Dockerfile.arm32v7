@@ -1,0 +1,20 @@
+FROM arm32v7/debian
+
+# ghc bindist exists for armv7
+ARG GHC_VER=8.6.3
+
+RUN apt-get update \
+  # llvm needed for compiling
+  && apt-get install -y curl llvm \
+  && curl -sSL https://get.haskellstack.org/ | sh \
+  && apt-get autoremove -y --purge curl \
+  && rm -rf /var/lib/apt/lists/* \
+  && stack setup ghc-$GHC_VER
+
+WORKDIR /app
+
+# for GHC 8.6.3
+ENV RESOLVER=lts-13.11
+
+ENTRYPOINT stack install --resolver $RESOLVER
+
