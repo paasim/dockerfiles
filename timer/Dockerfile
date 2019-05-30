@@ -1,8 +1,11 @@
-FROM haskell as build
+FROM debian as build
 
-RUN git clone https://github.com/paasim/timer.git \
+RUN apt-get update \
+  && apt-get install -y curl \
+  && curl -sSL https://get.haskellstack.org/ | sh \
+  && git clone https://github.com/paasim/timer.git \
   && cd timer \
-  && stack install --install-ghc
+  && stack install --resolver lts-13.11
 
 FROM scratch
 
