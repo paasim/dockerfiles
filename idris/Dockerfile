@@ -8,3 +8,4 @@ RUN git clone https://github.com/idris-lang/Idris-dev.git idris && cd idris \
 WORKDIR /data
 
 ENTRYPOINT ["idris"]
+
