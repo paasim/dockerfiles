@@ -1,4 +1,4 @@
-FROM rocker/verse
+FROM rocker/geospatial
 
 COPY Makevars /root/.R/Makevars
 
