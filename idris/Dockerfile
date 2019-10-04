@@ -1,8 +1,6 @@
-FROM haskell
+FROM haskell:8.6.5
 
-RUN git clone https://github.com/idris-lang/Idris-dev.git idris && cd idris \
-  && cabal update \
-  && make \
+RUN cabal update \
   && cabal install idris
 
 WORKDIR /data
