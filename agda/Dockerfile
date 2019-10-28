@@ -1,4 +1,4 @@
-FROM haskell:8.0.2
+FROM haskell:8.6
 
 WORKDIR /data
 
@@ -6,6 +6,7 @@ RUN apt-get update \
   && apt-get install -y emacs wget vim \
   && rm -rf /var/lib/apt/lists/* \
   && cabal update \
+  && cabal install alex happy \
   && cabal install Agda \
   && wget -O agda-stdlib.tar https://github.com/agda/agda-stdlib/archive/v1.1.tar.gz \
   && tar -xzvf agda-stdlib.tar \
