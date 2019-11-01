@@ -17,10 +17,12 @@ RUN git clone https://github.com/plfa/plfa.github.io plfa \
   && rm -rf /var/lib/apt/lists/* \
   && rbenv install $ruby_ver \
   && gem install bundler \
-  && cd plfa \
-  && bundle install 
+  && cd /data/plfa \
+  && bundle install
 
-
+EXPOSE 4000
 WORKDIR /data/plfa
 ENV PATH="${PATH}:/root/.rbenv/versions/$ruby_ver/bin"
+
+RUN make build
 
