@@ -27,6 +27,5 @@ RUN mkdir -p /home/rstudio/.R \
       rstan \
       loo \
       rstanarm \
-      shinystan \
-  && installGithub.r paasim/stanutils
+      shinystan
 
