@@ -5,6 +5,7 @@ RUN pip install --upgrade \
     matplotlib \
     pylint \
     scikit-learn \
+    statsmodels \
     tensorflow \
     xgboost \
   && install_cmdstan \
