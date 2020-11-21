@@ -3,7 +3,7 @@ FROM python:3.8
 RUN pip install --upgrade \
     cmdstanpy[all] \
     matplotlib \
-    pylint \
+    mypy \
     scikit-learn \
     statsmodels \
     tensorflow \
