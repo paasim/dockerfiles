@@ -6,8 +6,4 @@ RUN apt-get update \
 
 WORKDIR /app
 
-# for GHC 8.8.4
-ENV RESOLVER=lts-16.27
-
-ENTRYPOINT stack install --resolver $RESOLVER --system-ghc
 
